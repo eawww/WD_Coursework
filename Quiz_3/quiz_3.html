@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gallery</title>
+        <meta charset="UTF-8">
+        <style>
+            div{
+                border: 1px solid lightgray;
+                height: 320px;
+                width: 380px;
+                overflow:hidden;
+            }
+            img{
+                position: relative;
+                padding:5px;
+                background-color:white;
+                border:1px solid lightgray;
+                height:150px;
+                width:150px;
+                margin:5px;
+                transition: top 2s;
+            }
+            div:hover img{
+                
+                top: -200px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div>
+        <img src="1.jpg">
+        <img src="2.jpg">
+        <img src="3.jpg">
+        <img src="4.jpg">
+        <img src="5.jpg">
+        <img src="6.jpg">
+        </div>
+    </body>
+</html>

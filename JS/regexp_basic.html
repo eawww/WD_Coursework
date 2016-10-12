@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RegExpression Basics</title>
+        <meta charset="UTF-8">
+        <script>
+            var text_1 = "Web Development";
+            var index_1 = text_1.search(/develop/i);
+            console.log(index_1);
+            text_1=text_1.replace(/development/i,"Design");
+            console.log(text_1);
+            
+            var regExp=new RegExp('development', 'i');
+            text_1=text_1.replace(regExp,"Design");
+            
+            var text_2="JavaScript is different from Java";
+            var result=text_2.match(/Java/g);
+            console.log(result);
+            
+            var text_3="First line \n Second line";
+            result=text_3.replace(/line/gm,"word");
+            console.log(result);
+            
+            /** validation **/
+            //is there a number in the string?
+            var text_4="We will go to Mars in 2050";
+            var pattern = new RegExp("\\d");
+            result = pattern.test(text_4);
+            console.log(result);
+            
+            //is there a space in the string
+            pattern=new RegExp("\\s");
+            result = pattern.test(text_4);
+            console.log(result);
+            
+            //is there a word that starts with or ends with 'ma'?
+            pattern=new RegExp("\\ma",'i');
+            result = pattern.test(text_4);
+            console.log(result);  
+            
+            //is there one or more occurances of l?
+            pattern=/\bw*l+/;
+            result = pattern.test(text_4);
+            console.log(result);              
+            
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>

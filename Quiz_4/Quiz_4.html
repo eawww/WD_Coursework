@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    
+    body{
+        background-color: lightcyan;
+    }
+    
+    div.buttons{
+        position:absolute;
+        top:70px;
+        left:200px;
+    }
+    
+    div.photo{
+        position:absolute;
+        padding:0px;
+        top:100px;
+        left:200px;
+        width:302px;
+        height:302px;
+    }
+    
+    div.photo img {
+        position:absolute;
+        background-color: white;
+        width: 290px;
+        height: 290px;
+        padding: 5px;
+        border:1px solid lightgray;
+    }
+    
+    
+    div.hidden{
+        visibility:hidden;
+    }
+    
+    div.description{
+        position:absolute;
+        line-height: 50px;
+        left:6px;
+        bottom:6px;
+        height:50px;
+        width:290px;
+        color:white;
+        background-color:rgba(0,0,0,0.3);
+        text-align: center;
+    }
+    
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    var _global_index = 0;
+    
+     $(document).ready(function () { 
+          
+          $('#prev').prop('disabled', true);
+          var imgArr = $('img.image');
+          var descArr = $('div.descrip');
+          $('#next').on('click', function(event){
+              next(imgArr, descArr);
+              event.stopPropagation();
+          });
+          $('#prev').on('click', function(event){
+              prev(imgArr, descArr);
+              event.stopPropagation();
+          });
+          
+//code goes here
+
+ });
+    function next(imgArr,descArr){
+        $('#prev').prop('disabled', false);
+        _global_index++;
+        $('#photo').prop('src', imgArr.eq(_global_index).prop('src'));
+        $('#desc').html(descArr.eq(_global_index).html());
+        //$('div.pictureFrame').css()
+        if(_global_index > imgArr.size()-2){
+            $('#next').prop('disabled', true);
+        }
+        
+    }
+    function prev(imgArr,descArr){
+        $('#next').prop('disabled',false);
+        _global_index--;
+        $('#photo').prop('src', imgArr.eq(_global_index).prop('src'));
+        $('#desc').html(descArr.eq(_global_index).html());
+        if(0 >= _global_index)
+            $('#prev').prop('disabled',true);
+    }
+</script>
+</head>
+<body>
+    <div class="buttons">
+        <button id="prev">prev</button>
+        <button id="next">next</button>
+    </div>
+    <div id="gallery">
+    <div class="photo">
+    <img id="photo" src='images/1.jpg'>
+    <div id="desc" class="description" >beach</div>
+    </div>
+
+    <div class="hidden">
+     <img class="image" src='images/1.jpg'> 
+     <div class="descrip">beach</div>
+    </div>
+    <div class="hidden">
+     <img class="image" src='images/2.jpg'> 
+     <div class="descrip">flower 2</div>
+    </div>
+    
+    <div class="hidden">
+    <img class="image" src='images/3.jpg'>
+     <div class="descrip">flower 3</div>
+    </div>
+    
+    <div class="hidden">
+    <img class="image" src='images/4.jpg'> 
+     <div class="descrip">flower 4</div>
+    </div>
+    </div>
+    
+</body>
+</html>

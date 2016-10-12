@@ -1,0 +1,122 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 25, 2016, 5:51:08 PM
+    Author     : eric
+*/
+
+.entirety{
+    width: 82%;
+    margin: auto;
+}
+.latest{
+    float:left;
+    color:white;
+    background-color: darkblue;
+    font-size: 18px;
+    padding:5px;
+}
+div.bottompart{
+    float:left;
+    border: 1px solid gray;
+    background-color:lightgray;
+    overflow-y: auto;
+}
+div.titleheading{
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+.texty{
+    margin:10px;
+}
+.date{
+    font-size: 13px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+div.image {
+    float:right;
+    height:200px;
+    width:200px;
+    margin:10px;
+    border: 2px solid gray;
+}
+div.marq{
+    position:relative;
+    overflow: hidden;
+    font-size: 18px;
+    border: 1px solid gray;
+    height: 30px;/*made this 30 because it 
+    doesn't make sense that 'latest' is bigger
+    than the 18px title but a component inline
+    with it is only 20px. 20px kind of messed up
+    the page*/
+
+}
+.marq div:hover{
+    -webkit-animation-play-state: paused;
+}
+.marq div {
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-animation: marquee 20s linear infinite;
+}
+.marq span:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+span{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+div.pane {
+    border: 3px solid;
+    border-color: gray;
+    background-color: lightgray;
+    overflow-y: auto;
+}
+.date{
+    color: gray;
+}
+.image{
+
+}
+.image img{
+    height:200px;
+    width:200px;
+}
+.textbody{
+    line-height: 1.4;
+}
+img.logo {
+    margin-top:5px;
+    height:20px;
+    width:15px;
+}
+.caption{
+    color: rgba(0,0,0,0);
+    background-color: black;
+    position: relative;
+    width: 200px;
+    height: 25px;
+    left: 0px;
+    text-align: center;
+    opacity: .0;
+    bottom: 25px;
+    -webkit-transition: background-color 2s, color 2s, opacity 2s;
+}
+div.image:hover .caption {
+    color: white;
+    opacity: .7;
+}
+
+@-webkit-keyframes marquee {
+    0%   { text-indent: 27.5em }
+    100% { text-indent: -105em }
+}
