@@ -21,7 +21,7 @@ function validate_username(element, feedback){
         $(feedback).text("Username must be between 6 and 10 characters");
         return error_style(element,feedback);
     }
-    else if (!/[a-zA-Z_]/.test(value)){
+    else if (!/^[a-zA-Z_]+$/.test(value)){
         $(feedback).text("Username can only contain letters and underscore");
         return error_style(element,feedback);
     }
@@ -68,7 +68,7 @@ function error_style(element, feedback){
 }
 
 function correct_style(element, feedback){
-    $(element).css("border-color","light-gray");
+    $(element).css("border-color","lightgray");
     $(feedback).css("color","green");
     $(feedback).html("&#10004");
     return true;
