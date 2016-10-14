@@ -43,7 +43,8 @@
             
             function validate_username(username,feedback){
                 var value=$(username).val().trim();
-                if(value==null || value==""){
+                var pattern = /[a-zA-Z]/;
+                if(value==null || value=="" ){
                     $(feedback).text("Username can't be empty");
                     error_style(username,feedback);
                 }
